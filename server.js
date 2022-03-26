@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 app.get('/api', (req, res) => {
     res.render('index');
 });
-
+// why do i not do href="api/ceo-list<%=ceo.slug%>" here?
 app.get('/api/ceo-list', (req, res) => {
     res.render('ceo_list', { ceo_list: ceoList });
 });
@@ -27,4 +27,7 @@ app.listen(3000, () => {
     console.log('App is now listening on port 3000 . . .')
 });
 
-
+// app.get('/api/media/:Title', (req, res) => {
+//     let foundMedia = mediaList.filter((media) => media.Title == req.params.Title);
+//     res.render('media_list', { displayMedia: foundMedia });
+// });
